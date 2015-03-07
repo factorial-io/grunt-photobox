@@ -11,6 +11,7 @@
 var fs           = require( 'fs' ),
     path         = require( 'path' ),
     filenamify   = require( 'filenamify' ),
+    async        = require( 'async' ),
     phantomjs    = require( 'phantomjs' ),
     phantomPath  = phantomjs.path;
 
@@ -518,7 +519,7 @@ PhotoBox.prototype.startPhotoSession = function() {
     userName                      : this.options.userName
   } );
 
-  this.pictures.forEach( function( picture ) {
+  async.eachLimit(this.pictures, this.options.limit, function( picture, nextPicture ) {
     this.grunt.log.writeln( 'started photo session for ' + picture );
 
     var args = [
@@ -545,6 +546,7 @@ PhotoBox.prototype.startPhotoSession = function() {
       opts : opts
     }, function( err, result, code ) {
       this.photoSessionCallback( err, result, code, picture );
+      nextPicture();
     }.bind( this ) );
   }.bind( this ) );
 };
