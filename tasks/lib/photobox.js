@@ -516,7 +516,8 @@ PhotoBox.prototype.startPhotoSession = function() {
     localToRemoteUrlAccessEnabled : this.options.localToRemoteUrlAccessEnabled,
     password                      : this.options.password,
     userAgent                     : this.options.userAgent,
-    userName                      : this.options.userName
+    userName                      : this.options.userName,
+    delay                         : this.options.delay
   } );
 
   async.eachLimit(this.pictures, this.options.limit, function( picture, nextPicture ) {

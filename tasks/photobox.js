@@ -27,7 +27,8 @@ module.exports = function( grunt ) {
             userAgent                     : 'Photobox',
             userName                      : '',
             limit                         : 1,
-            urls                          : [ 'http://4waisenkinder.de' ]
+            urls                          : [ 'http://4waisenkinder.de' ],
+            delay                         : 1000
           } ),
           Photobox = require( './lib/photobox' ),
           pb       = new Photobox( grunt, options, done );

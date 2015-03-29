@@ -176,6 +176,16 @@ Default value: `default`
 - `darker` - image information in diff image will be changed to a darker image
 - `brighter` - image information in diff image will be change to a brighter image
 
+
+#### options.delay
+
+Type: `Integer`
+
+Default value: `1000`
+
+Delay between loading the page and taking the screenshot.
+
+
 #### options.limit
 
 Type: `Integer`
