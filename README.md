@@ -176,6 +176,16 @@ Default value: `default`
 - `darker` - image information in diff image will be changed to a darker image
 - `brighter` - image information in diff image will be change to a brighter image
 
+#### options.limit
+
+Type: `Integer`
+
+Default value: `1`
+
+Number of concurrent running tasks.
+
+
+
 ### Usage Examples
 
 #### Default Options
